@@ -1,17 +1,16 @@
-var Twit = require('twit')
+var Twit = require('twit') //semi -colon!
 
 var T = new Twit({
     consumer_key:         's6hGsyQvdP2hNGojmMIYg'
   , consumer_secret:      'iTpJt3LHjp94dQs249KSSTIyAUnjhKHsKdqEzIn2HU'
   , access_token:         '2239949917-X2580CMnftwNjLVuQaTGI9hV1VoezaVk7dv3TBi'
   , access_token_secret:  'iiO0jUBTod8gl7A9rGIQaYrpEgrVOfOExxXiey44iWGbi'
-})
+}) //SEMI-COLON
 
-var tweetlist = new Array();
+var tweetlist = new Array(); // USE THE LITERAL =[];
 
 T.get('statuses/user_timeline', { screen_name: 'frcfms' }, function(err, reply) {
-  for(var i=0;i<reply.length;i++)
-  {
+  for(var i=0; i<reply.length; i++) {
     //console.log(reply[i].text);
     var items = reply[i].text.split(" ");
 
@@ -35,7 +34,7 @@ T.get('statuses/user_timeline', { screen_name: 'frcfms' }, function(err, reply) 
       blueautoscore: items[28],
       redteleopdiskpoints: items[30],
       blueteleopdiskpoints: items[32]
-      };
+    };
 
     tweetlist[i] = newtweet;
 
